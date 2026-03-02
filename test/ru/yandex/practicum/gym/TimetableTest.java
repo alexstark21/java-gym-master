@@ -81,7 +81,7 @@ public class TimetableTest {
 
         //Проверить, что за вторник не вернулось занятий
         Map<TimeOfDay, List<TrainingSession>> tuesdaySessions = timetable.getTrainingSessionsForDay(DayOfWeek.TUESDAY);
-        assertNull(tuesdaySessions);
+        assertTrue(tuesdaySessions.isEmpty());
     }
 
     @Test
@@ -124,7 +124,7 @@ public class TimetableTest {
 
         // Проверить, что за вторник не вернулось занятий
         Map<TimeOfDay, List<TrainingSession>> tuesdaySessions = timetable.getTrainingSessionsForDay(DayOfWeek.TUESDAY);
-        assertNull(tuesdaySessions);
+        assertTrue(tuesdaySessions.isEmpty());
     }
 
     @Test
@@ -147,7 +147,7 @@ public class TimetableTest {
         //Проверить, что за понедельник в 14:00 не вернулось занятий
         List<TrainingSession> mondayTrainingSessionsTwo = timetable.getTrainingSessionsForDayAndTime(DayOfWeek.MONDAY,
                 new TimeOfDay(14, 0));
-        assertNull(mondayTrainingSessionsTwo);
+        assertTrue(mondayTrainingSessionsTwo.isEmpty());
     }
 
     @Test
